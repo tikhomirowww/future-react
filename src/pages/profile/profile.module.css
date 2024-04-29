@@ -1,0 +1,76 @@
+.profile {
+    background-color: #fff;
+    border: 1px solid #dfdeda;
+    border-radius: 15px;
+    position: relative;
+    min-height: 700px;
+}
+
+.backgroundImage {
+    max-height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 70px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.avatar {
+    max-height: 180px;
+    max-width: 180px;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    border: 5px solid white;
+    top: 130px;
+    left: 30px;
+}
+
+.about {
+    max-width: 80%;
+    margin-top: 20px;
+}
+
+.name {
+    font-size: 28px;
+}
+
+.job {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.edit {
+    padding: 10px;
+    border: 1px solid #dfdeda;
+    margin-top: 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.edit:hover {
+    margin-top:18px;
+    background-color: gray;
+    color: #fff;
+}
+
+.info {
+    padding-left: 60px;
+}
+
+@media screen and (max-width: 449px) {
+    .avatar {
+        top: 80px;
+        left: 23%;
+        max-height: 20%;
+    }
+
+    .info {
+        padding-left: 20px;
+    }
+
+}

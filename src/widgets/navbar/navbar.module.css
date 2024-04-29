@@ -1,0 +1,65 @@
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  height: 8vh;
+  padding: 10px;
+  box-shadow: 0.1px 0.1px 1.5px;
+}
+.navbar_contayner {
+  max-width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+.navbar_contayner {
+  display: flex;
+}
+
+.nav_logo img {
+  width: 135px;
+  height: 24px;
+}
+.nav_profil_img {
+  margin: 0;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+.nav_module {
+  position: absolute;
+  z-index: 3;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 25px 25px;
+  background-color: #fff;
+
+  width: 20%;
+  height: 15%;
+  top: 8vh;
+  right: 10%;
+  transition: 0.5s;
+  transform: translateY(0);
+}
+.nav_module__inner {
+  width: 80%;
+  height: 90%;
+  background-color: #f1ecec;
+  margin: auto;
+  border-radius: 0 0 25px 25px;
+  padding: 10px;
+  
+}
+.exit{
+    padding-top:10px ;
+font-size: 20px;
+font-weight: 700;
+display: flex;
+}
+.nav_profil {
+ font-size: 20px;
+font-weight: 700;
+}
+.closeModule {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

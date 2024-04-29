@@ -1,0 +1,63 @@
+.editProfile {
+    background-color: #fff;
+    border: 1px solid #dfdeda;
+    border-radius: 15px;
+    position: relative;
+    min-height: 700px;
+}
+
+.arrow {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.editProfile h2{
+    margin-left: auto;
+    max-width: 120px;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+.forma label{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 200px;
+    padding: 2px;
+}
+
+.forma label input{
+    border: 1px solid #c4c4c4;
+    max-width: 380px;
+    padding: 7px;
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+.forma input:hover {
+    background-color: #ececec;
+}
+
+.forma button {
+    border: 1px solid #c4c4c4;
+    padding: 10px;
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.forma button:hover {
+    background-color: #ececec;
+}
+
+.forma input:focus {
+    background-color: #ececec;
+}
