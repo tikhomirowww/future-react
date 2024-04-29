@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 import styles from "./input.module.css";
 
 interface IInput {
@@ -7,7 +7,7 @@ interface IInput {
   value?: string;
   placeholder?: string;
   type?: string;
-  onChange?: () => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: FC<IInput> = ({
