@@ -6,7 +6,6 @@ const Navbar = () => {
 
   const [module, setModule] = useState(false);
 
-
   const openModule = () => {
     setModule(true);
   };
@@ -33,7 +32,9 @@ const Navbar = () => {
         </button>
         {module ? (
           <div className={styles.nav_module}>
-              <button onClick={closeModule} className={styles.closeModule}>X</button>
+            <button onClick={closeModule} className={styles.closeModule}>
+              X
+            </button>
             <div className={styles.nav_module__inner}>
               <NavLink to={"/profile"} className={styles.nav_profil}>
                 Профиль
@@ -42,6 +43,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : null}
+        <div className={styles.overlov} onClick={closeModule}></div>
       </div>
     </div>
   );
