@@ -3,7 +3,6 @@ import styles from "./navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
   const [module, setModule] = useState(false);
 
   const openModule = () => {
@@ -36,8 +35,26 @@ const Navbar = () => {
               X
             </button>
             <div className={styles.nav_module__inner}>
-              <NavLink to={"/profile"} className={styles.nav_profil}>
+              <NavLink
+                onClick={closeModule}
+                to={"/profile"}
+                className={styles.nav_profil}
+              >
                 Профиль
+              </NavLink>
+              <NavLink
+                onClick={closeModule}
+                to={"/register"}
+                className={styles.nav_profil}
+              >
+                Sign up
+              </NavLink>{" "}
+              <NavLink
+                onClick={closeModule}
+                to={"/login"}
+                className={styles.nav_profil}
+              >
+                Sign in
               </NavLink>
               <button className={styles.exit}>Выйти</button>
             </div>

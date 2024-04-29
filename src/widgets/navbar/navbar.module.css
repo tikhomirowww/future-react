@@ -4,6 +4,9 @@
   height: 8vh;
   padding: 10px;
   box-shadow: 0.1px 0.1px 1.5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .navbar_contayner {
   max-width: 80%;
