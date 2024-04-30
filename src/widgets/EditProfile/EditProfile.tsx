@@ -1,7 +1,42 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import styles from "./edit.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ProfileType, UserType } from "../../types/types";
+import Input from "../../ui/input/Input";
+import { useAppDispatch, useAppSelector } from "../../helpers/consts";
+import { changeProfile } from "../../store/actions/users.actions";
 const EditProfile = () => {
+  const [user, setUser] = useState<ProfileType>({
+    name: "",
+    email: "",
+    password: "",
+    phone: "",
+    avatar: "",
+    background: "",
+    city: "",
+    status: "",
+  });
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { currentUser } = useAppSelector((state) => state.users);
+
+  useEffect(() => {
+    currentUser && setUser({ ...currentUser });
+  }, [currentUser]);
+
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const id = localStorage.getItem("currentUser");
+    id && dispatch(changeProfile({ id, user }));
+    navigate("/profile");
+  }
+
   return (
     <div className="container">
       <div className={styles.editProfile}>
@@ -21,22 +56,17 @@ const EditProfile = () => {
           </svg>
         </Link>
         <h2>Edit Profile</h2>
-        <form className={styles.forma}>
-          <label>
-            Name: <input type="text" placeholder="Name" />
-          </label>
-          <label>
-            SurName: <input type="text" placeholder="SurName" />
-          </label>
-          <label>
-            Job: <input type="text" placeholder="Your Job" />
-          </label>
-          <label>
-            Email: <input type="email" placeholder="Email" />
-          </label>
-          <label>
-            Password: <input type="password" placeholder="Password" />
-          </label>
+        <form onSubmit={handleSubmit} className={styles.forma}>
+          {Object.keys(user).map((item, index) => (
+            <Input
+              name={item}
+              onChange={handleInputChange}
+              key={index}
+              value={user[item]!.toString() || ""}
+              label={item}
+              placeholder={item}
+            />
+          ))}
           <button>Save Changes</button>
         </form>
       </div>

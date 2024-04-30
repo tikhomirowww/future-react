@@ -2,7 +2,7 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import Input from "../../ui/input/Input";
 import { UserType } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
-import { registerUser } from "../../store/actions/users.actions";
+import { getUsers, registerUser } from "../../store/actions/users.actions";
 import { useNavigate } from "react-router-dom";
 
 const Register: FC = () => {
@@ -15,6 +15,7 @@ const Register: FC = () => {
   });
 
   const dispatch = useAppDispatch();
+  const { users } = useAppSelector((state) => state.users);
   const navigate = useNavigate();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -25,6 +26,24 @@ const Register: FC = () => {
         return;
       }
     }
+
+    if (user.password.length <= 6) {
+      alert("Min length of password is 6 symbols");
+      return;
+    }
+
+    if (user.password !== user.password_confirm) {
+      alert("Passowrds do not match!");
+      return;
+    }
+
+    dispatch(getUsers());
+    const inDb = users.some((item) => item.email === user.email);
+    if (inDb) {
+      alert("This email is already exists");
+      return;
+    }
+
     dispatch(registerUser(user));
     setUser({
       name: "",
@@ -48,7 +67,7 @@ const Register: FC = () => {
         <div key={index}>
           <Input
             onChange={handleChange}
-            value={user[item]}
+            value={user[item]!.toString()}
             label={item}
             placeholder={item}
             name={item}

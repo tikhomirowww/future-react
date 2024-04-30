@@ -1,20 +1,15 @@
 {
   "users": [
     {
-      "name": "Ilia Tikhomirov",
-      "phone": "0703775060",
+      "name": "Илья Тихомиров",
       "email": "tihomirovi92@gmail.com",
       "password": "123",
-      "password_confirm": "123",
+      "phone": "0703775060",
+      "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg?w=800",
+      "background": "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+      "city": "Bishkek",
+      "status": "volk",
       "id": 1
-    },
-    {
-      "name": "1",
-      "phone": "1",
-      "email": "1",
-      "password": "1",
-      "password_confirm": "1",
-      "id": 2
     }
   ]
 }
