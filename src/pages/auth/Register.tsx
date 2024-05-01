@@ -4,6 +4,8 @@ import { UserType } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
 import { getUsers, registerUser } from "../../store/actions/users.actions";
 import { useNavigate } from "react-router-dom";
+import Button from "../../ui/button/Button";
+import { Sign } from "crypto";
 
 const Register: FC = () => {
   const [user, setUser] = useState<UserType>({
@@ -74,7 +76,7 @@ const Register: FC = () => {
           />
         </div>
       ))}
-      <button>Sign up</button>
+      <Button label="Sign in" />
     </form>
   );
 };
