@@ -35,8 +35,10 @@ const Navbar = () => {
             alt=""
           />
         </NavLink>
+
         
         {currentUser && <p>{currentUser.name}</p>}
+
 
         <button onClick={openModule}>
           <img
@@ -54,27 +56,36 @@ const Navbar = () => {
               X
             </button>
             <div className={styles.nav_module__inner}>
-              <NavLink
-                onClick={closeModule}
-                to={"/profile"}
-                className={styles.nav_profil}
-              >
-                Профиль
-              </NavLink>
-              <NavLink
-                onClick={closeModule}
-                to={"/register"}
-                className={styles.nav_profil}
-              >
-                Sign up
-              </NavLink>{" "}
-              <NavLink
-                onClick={closeModule}
-                to={"/login"}
-                className={styles.nav_profil}
-              >
-                Sign in
-              </NavLink>
+              <div>
+                {" "}
+                <NavLink
+                  onClick={closeModule}
+                  to={"/profile"}
+                  className={styles.nav_profil}
+                >
+                  Профиль
+                </NavLink>
+              </div>
+              <div>
+                {" "}
+                <NavLink
+                  onClick={closeModule}
+                  to={"/register"}
+                  className={styles.nav_profil}
+                >
+                  Sign up
+                </NavLink>{" "}
+              </div>
+              <div>
+                {" "}
+                <NavLink
+                  onClick={closeModule}
+                  to={"/login"}
+                  className={styles.nav_profil}
+                >
+                  Sign in
+                </NavLink>
+              </div>
               <button
                 onClick={() => {
                   dispatch(logout());
