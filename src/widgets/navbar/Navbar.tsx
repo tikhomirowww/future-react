@@ -36,7 +36,7 @@ const Navbar = () => {
           />
         </NavLink>
 
-        {currentUser && <p>{currentUser.name}</p>}
+        {currentUser && <p>Beka</p>}
 
         <button onClick={openModule}>
           <img
