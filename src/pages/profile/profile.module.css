@@ -4,6 +4,8 @@
     border-radius: 15px;
     position: relative;
     min-height: 700px;
+    margin-top: 20px;
+    position: relative;
 }
 
 .backgroundImage {
@@ -15,22 +17,25 @@
     margin-bottom: 70px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    object-fit: cover;
 }
 
 .avatar {
     max-height: 180px;
     max-width: 180px;
+    height: 100%;
     width: 100%;
     border-radius: 50%;
     position: absolute;
     border: 5px solid white;
     top: 130px;
     left: 30px;
+    object-fit: cover;
 }
 
 .about {
     max-width: 80%;
-    margin-top: 20px;
+    font-size: 20px;
 }
 
 .name {
@@ -41,6 +46,14 @@
     font-size: 15px;
     font-weight: 500;
     margin-top: 5px;
+    gap: 20px;
+}
+
+.job p {
+    color: #767676;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 .edit {
@@ -50,6 +63,8 @@
     transition: 0.3s;
     border-radius: 10px;
     display: inline-block;
+    position: absolute;
+    bottom: 40px;
 }
 
 .edit:hover {
@@ -60,6 +75,20 @@
 
 .info {
     padding-left: 60px;
+}
+
+.contactInfo {
+    color: #0078ff !important;
+    font-weight: 500 !important;
+}
+
+.infoList {
+    list-style: circle;
+}
+
+.infoList li{
+    margin-top: 5px;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 449px) {
@@ -74,3 +103,4 @@
     }
 
 }
+
