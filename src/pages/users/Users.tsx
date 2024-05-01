@@ -12,6 +12,7 @@ const Users = () => {
       <Friends/>
       <Friends/>
     </div>;
+
 };
 
 export default Users;

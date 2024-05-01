@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
 import { getCurrentUser } from "../../store/actions/users.actions";
 import { logout } from "../../store/slices/users.slices";
@@ -35,7 +35,7 @@ const Navbar = () => {
             alt=""
           />
         </NavLink>
-
+        
         {currentUser && <p>{currentUser.name}</p>}
 
         <button onClick={openModule}>
