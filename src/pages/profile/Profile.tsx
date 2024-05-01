@@ -16,6 +16,7 @@ const Profile = () => {
   const imageUrl = "";
   const avatarUrl = "";
 
+  
   return (
     <div className="container">
       {currentUser && (
@@ -44,14 +45,17 @@ const Profile = () => {
               <span>{currentUser.name}</span>
             </h3>
 
-            <h5 className={styles.job}>
-              <i>City:</i>
-              <div> {currentUser.city}</div>
-            </h5>
-
             <p className={styles.about}>
-              <b>Status:</b> {currentUser.status}
+              <p>Status: {currentUser.status}</p> 
             </p>
+            <h5 className={styles.job}>
+              <p>City: {currentUser.city}</p> 
+                <p className={styles.contactInfo}>Контактная информация:</p>
+                <ul className={styles.infoList}>
+                  <li>Email: {currentUser.email}</li>
+                  <li>Phone: {currentUser.phone}</li>
+                </ul>
+            </h5>
             <button className={styles.edit}>
               <Link to={"/editProfile"}>Edit</Link>
             </button>
