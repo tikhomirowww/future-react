@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import styles from "./button.module.css";
 interface IButton {
-  label?: string;
+  children?: string;
 }
 
-const Button: FC<IButton> = ({ label }) => {
-  return <button className={styles.button}>{label}</button>;
+const Button: FC<IButton> = ({ children }) => {
+  return <button className={styles.button}>{children}</button>;
 };
 
 export default Button;
