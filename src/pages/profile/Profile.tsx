@@ -1,29 +1,42 @@
 import React, { useEffect } from "react";
 import styles from "./profile.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
-import { getCurrentUser } from "../../store/actions/users.actions";
+import { getCurrentUser, getOneUser } from "../../store/actions/users.actions";
+import Button from "../../ui/button/Button";
+import Post from "../../ui/posts/Post";
 
 const Profile = () => {
   const dispatch = useAppDispatch();
+
+  const { id: paramId } = useParams();
+
   useEffect(() => {
-    const id = localStorage.getItem("currentUser");
-    id && dispatch(getCurrentUser(id));
+    if (paramId) {
+      dispatch(getOneUser(paramId));
+    } else {
+      const id = localStorage.getItem("currentUser");
+      id && dispatch(getCurrentUser(id));
+    }
   }, []);
 
-  const { currentUser } = useAppSelector((state) => state.users);
+  const { currentUser, oneUser } = useAppSelector((state) => state.users);
+  console.log(currentUser);
 
   const imageUrl = "";
   const avatarUrl = "";
 
-  
+  function getUser() {
+    return paramId ? oneUser : currentUser;
+  }
+
   return (
     <div className="container">
-      {currentUser && (
+      {getUser() && (
         <div className={styles.profile}>
           <img
             src={
-              currentUser.background ||
+              getUser()?.background ||
               "https://taj.im/wp-content/uploads/2016/02/default.jpg"
             }
             alt="Profile"
@@ -34,7 +47,7 @@ const Profile = () => {
             <div>
               <img
                 src={
-                  currentUser.avatar ||
+                  getUser()?.avatar ||
                   "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1114445501.jpg"
                 }
                 alt="Logo"
@@ -42,20 +55,26 @@ const Profile = () => {
               />
             </div>
             <h3 className={styles.name}>
-              <span>{currentUser.name}</span>
+              <span>{getUser()?.name}</span>
             </h3>
 
-            <p className={styles.about}>
-              <p>Status: {currentUser.status}</p> 
-            </p>
+            <div className={styles.about}>
+              <p>Status: {getUser()?.status}</p>
+            </div>
             <h5 className={styles.job}>
-              <p>City: {currentUser.city}</p> 
-                <p className={styles.contactInfo}>Контактная информация:</p>
-                <ul className={styles.infoList}>
-                  <li>Email: {currentUser.email}</li>
-                  <li>Phone: {currentUser.phone}</li>
-                </ul>
+              <p>City: {getUser()?.city}</p>
+              <p className={styles.contactInfo}>Контактная информация:</p>
+              <ul className={styles.infoList}>
+                <li>Email: {getUser()?.email}</li>
+                <li>Phone: {getUser()?.phone}</li>
+              </ul>
             </h5>
+            {getUser()?.posts?.map((item, index) => (
+              <Post post={item} key={index} />
+            ))}
+            <Link to="/add/post">
+              <Button>New Post</Button>
+            </Link>
             <button className={styles.edit}>
               <Link to={"/editProfile"}>Edit</Link>
             </button>

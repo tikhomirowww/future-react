@@ -1,16 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ProfileType, UserType } from "../../types/types";
-import { getCurrentUser, getUsers } from "../actions/users.actions";
+import { getCurrentUser, getOneUser, getUsers } from "../actions/users.actions";
 
-type StateType = {
+export type StateType = {
   currentUser: null | ProfileType;
-  users: UserType[];
+  users: ProfileType[];
+  oneUser: ProfileType | null;
   loading: boolean;
 };
 
 const INIT_STATE: StateType = {
   currentUser: null,
   users: [],
+  oneUser: null,
   loading: false,
 };
 
@@ -38,6 +40,13 @@ export const usersSlice = createSlice({
       .addCase(getCurrentUser.fulfilled, (state, action) => {
         state.loading = false;
         state.currentUser = action.payload!;
+      })
+      .addCase(getOneUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getOneUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.oneUser = action.payload!;
       });
   },
 });

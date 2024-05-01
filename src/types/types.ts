@@ -5,7 +5,7 @@ export interface UserType {
   password: string;
   password_confirm?: string;
   id?: number;
-  [key: string]: string | number | undefined;
+  [key: string]: string | number | undefined | CardData[];
 }
 
 export interface ProfileType extends UserType {
@@ -13,6 +13,7 @@ export interface ProfileType extends UserType {
   status: string;
   avatar: string;
   background: string;
+  posts?: CardData[];
 }
 
 export type LoginType = {
@@ -21,4 +22,11 @@ export type LoginType = {
   [key: string]: string;
 };
 
-
+export interface CardData {
+  image: string;
+  tag: string;
+  title: string;
+  description: string;
+  time?: string;
+  [key: string]: string | number | undefined;
+}

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import styles from "./navbar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
-import { getCurrentUser } from "../../store/actions/users.actions";
+import { getCurrentUser, getUsers } from "../../store/actions/users.actions";
 import { logout } from "../../store/slices/users.slices";
+import Input from "../../ui/input/Input";
 
 const Navbar = () => {
   const [module, setModule] = useState(false);
@@ -26,6 +27,13 @@ const Navbar = () => {
   const closeModule = () => {
     setModule(false);
   };
+  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  useEffect(() => {
+    setSearchParams({ q: search });
+    dispatch(getUsers());
+  }, [search]);
+
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar_contayner}>
@@ -36,9 +44,15 @@ const Navbar = () => {
           />
         </NavLink>
 
-        
-        {currentUser && <p>{currentUser.name}</p>}
+        <Input
+          value={search}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSearch(e.target.value)
+          }
+          placeholder="Search"
+        />
 
+        {currentUser && <p>{currentUser.name}</p>}
 
         <button onClick={openModule}>
           <img

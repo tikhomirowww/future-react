@@ -8,8 +8,65 @@
       "avatar": "https://sun9-30.userapi.com/c909218/u821563898/d10/-3/x_7f05b015f7.jpg",
       "background": "https://lh6.googleusercontent.com/proxy/8RjFptrvpyT04aKHzDDjoxBUF0F737fjcu8-NMd55TLl89cR989CofgHAsxIBbbgGlfSZUWQwS8xIiAnqW-ali7_",
       "city": "Bishkek Kyrgyzstan",
+      "posts": [
+        {
+          "description": "qwerty",
+          "image": "https://s1.cdn.autoevolution.com/images/models/MAZDA_626--Mk-5--Sedan-1997_main.jpg",
+          "tag": "coolllll",
+          "title": "mazda",
+          "time": "May 1, 2024"
+        },
+        {
+          "description": "bmw",
+          "image": "https://s1.cdn.autoevolution.com/images/models/MAZDA_626--Mk-5--Sedan-1997_main.jpg",
+          "tag": "coolllll",
+          "title": "mazda",
+          "time": "May 1, 2024"
+        },
+        {
+          "description": "asdfghjk",
+          "image": "https://s1.cdn.autoevolution.com/images/models/MAZDA_626--Mk-5--Sedan-1997_main.jpg",
+          "tag": "coolllll",
+          "title": "mazda",
+          "time": "May 1, 2024"
+        }
+      ],
       "status": "volk",
       "id": 1
+    },
+    {
+      "name": "Petya",
+      "phone": "0703775060",
+      "email": "petya@gmail.com",
+      "password": "12345678",
+      "password_confirm": "12345678",
+      "city": "",
+      "status": "",
+      "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg",
+      "background": "https://i0.wp.com/picjumbo.com/wp-content/uploads/magical-spring-forest-scenery-during-morning-breeze-free-photo.jpg?w=600&quality=80",
+      "posts": [
+        {
+          "description": "cool",
+          "image": "https://www.bmwgroup.com/content/dam/grpw/websites/bmwgroup_com/brands/bmw_i/2023/230201_BMW_Group_BMW_i4eDrive40.png",
+          "tag": "nice",
+          "title": "bmw",
+          "time": "May 1, 2024"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "vasya",
+      "phone": "0703775060",
+      "email": "vasya@gmail.com",
+      "password": "12345678",
+      "password_confirm": "12345678",
+      "city": "",
+      "status": "",
+      "avatar": "https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg",
+      "background": "https://i.pinimg.com/736x/30/aa/5b/30aa5b5f25a1fdec921a4b2e20238fcf.jpg",
+      "posts": [],
+      "id": 3
     }
   ]
 }

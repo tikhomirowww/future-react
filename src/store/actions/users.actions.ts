@@ -7,7 +7,14 @@ export const registerUser = createAsyncThunk(
   "users/registerUser",
   async (user: UserType) => {
     try {
-      await axios.post(API, user);
+      await axios.post(API, {
+        ...user,
+        city: "",
+        status: "",
+        avatar: "",
+        background: "",
+        posts: [],
+      });
     } catch (error) {
       console.log(error);
     }
@@ -16,7 +23,11 @@ export const registerUser = createAsyncThunk(
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
-    const { data } = await axios.get<UserType[]>(API);
+    console.log(window.location.search);
+
+    const { data } = await axios.get<ProfileType[]>(
+      `${API}/${window.location.search}`
+    );
     return data;
   } catch (error) {
     console.log(error);
@@ -25,6 +36,18 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
 
 export const getCurrentUser = createAsyncThunk(
   "users/getCurrentUser",
+  async (id: string | number) => {
+    try {
+      const { data } = await axios.get(`${API}/${id}`);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const getOneUser = createAsyncThunk(
+  "users/getOneUser",
   async (id: string | number) => {
     try {
       const { data } = await axios.get(`${API}/${id}`);
