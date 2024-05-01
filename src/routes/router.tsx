@@ -6,6 +6,7 @@ import EditProfile from "../widgets/EditProfile/EditProfile";
 import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";
 import NotFound from "../pages/notFoundPage/NotFound";
+import Post from "../ui/posts/Post";
 
 export const router = createBrowserRouter([
   {
