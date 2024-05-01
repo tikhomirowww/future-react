@@ -20,3 +20,5 @@ export type LoginType = {
   password: string;
   [key: string]: string;
 };
+
+
