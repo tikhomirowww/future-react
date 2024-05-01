@@ -76,7 +76,7 @@ const Register: FC = () => {
           />
         </div>
       ))}
-      <Button label="Sign in" />
+      <Button>Sign in</Button>
     </form>
   );
 };
