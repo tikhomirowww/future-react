@@ -20,7 +20,7 @@ const Input: FC<IInput> = ({
 }) => {
   return (
     <label className={styles.label}>
-      {label && `${label}:`}
+      <span className={styles.labelName}>{label && `${label}:`}</span>
       <input
         name={name}
         type={type}

@@ -56,7 +56,7 @@ const Login: FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="forma">
       <h1>Login form</h1>
       {Object.keys(user).map((item, index) => (
         <div key={index}>
