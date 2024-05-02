@@ -4,6 +4,7 @@ import { LoginType } from "../../types/types";
 import { useAppDispatch, useAppSelector } from "../../helpers/consts";
 import { getCurrentUser, getUsers } from "../../store/actions/users.actions";
 import { useNavigate } from "react-router-dom";
+import Button from "../../ui/button/Button";
 
 const Login: FC = () => {
   const [user, setUser] = useState<LoginType>({
@@ -69,7 +70,7 @@ const Login: FC = () => {
           />
         </div>
       ))}
-      <button>Sign in</button>
+      <Button>Sign in</Button>
     </form>
   );
 };
