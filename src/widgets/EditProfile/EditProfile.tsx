@@ -37,6 +37,10 @@ const EditProfile = () => {
     navigate("/profile");
   }
 
+
+  let filterdUser = Object.keys(user).filter((item) => item !== 'id' && item !== 'posts' && item !== 'password' && item !== 'password_confirm')
+
+
   return (
     <div className="container">
       <div className={styles.editProfile}>
@@ -56,19 +60,19 @@ const EditProfile = () => {
           </svg>
         </Link>
         <h2>Edit Profile</h2>
-        <form onSubmit={handleSubmit} className={styles.forma}>
-          {Object.keys(user).map((item, index) => (
-            <Input
-              name={item}
-              onChange={handleInputChange}
-              key={index}
-              value={user[item]!.toString() || ""}
-              label={item}
-              placeholder={item}
-            />
-          ))}
-          <button>Save Changes</button>
-        </form>
+            <form onSubmit={handleSubmit} className={styles.forma}>
+      {filterdUser.map((item: string, index: number) => (
+        <Input
+          name={item}
+          onChange={handleInputChange}
+          key={index}
+          value={(user[item] || "").toString()}
+          label={item}
+          placeholder={item}
+        />
+      ))}
+      <button>Save Changes</button>
+    </form>
       </div>
     </div>
   );

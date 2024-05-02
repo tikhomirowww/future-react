@@ -22,3 +22,18 @@ body {
   max-width: 992px;
   margin: 0 auto;
 }
+
+.forma {
+  margin-left: auto;
+  max-width: 400px;
+  margin-right: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.forma button {
+  max-width: 100px;
+  margin-top: 10px;
+}

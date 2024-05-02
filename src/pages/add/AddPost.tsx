@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../ui/button/Button";
 import moment from "moment";
 import { addPost } from "../../store/actions/posts.actions";
+import styles from "./AddPost.module.css"
+
 
 const AddPost: FC = () => {
   const [post, setPost] = useState<CardData>({
@@ -62,7 +64,7 @@ const AddPost: FC = () => {
   //   console.log(moment(moment().format("YYYY-MM-DD")).format("LL"));
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="forma">
       <h1>New post</h1>
       {Object.keys(post).map((item, index) => (
         <div key={index}>

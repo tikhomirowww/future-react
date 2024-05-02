@@ -69,10 +69,7 @@ const Profile = () => {
                 <li>Phone: {getUser()?.phone}</li>
               </ul>
             </h5>
-            {getUser()?.posts?.map((item, index) => (
-              <Post post={item} key={index} />
-            ))}
-            <Link to="/add/post">
+            <Link to="/add/post" className={styles.addPost}>
               <Button>New Post</Button>
             </Link>
             <button className={styles.edit}>
@@ -81,6 +78,13 @@ const Profile = () => {
           </div>
         </div>
       )}
+        <div className={styles.posts}>
+            <div className={styles.postsInner}>
+            {getUser()?.posts?.map((item, index) => (
+              <Post post={item} key={index} />
+            ))}
+            </div>
+        </div>
     </div>
   );
 };
