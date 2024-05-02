@@ -9,7 +9,7 @@
   z-index: 1;
 }
 .navbar_contayner {
-  max-width: 80%;
+  max-width: 70%;
   margin: auto;
   justify-content: space-between;
 }
@@ -35,10 +35,10 @@
   border-radius: 0 0 25px 25px;
   background-color: #fff;
 
-  width: 20%;
-  height: 20vh;
+  width: 15%;
+  height: 12vh;
   top: 8vh;
-  right: 10%;
+  right: 15%;
   transition: 0.5s;
   transform: translateY(0);
 }
@@ -51,7 +51,7 @@
   padding: 10px;
 }
 .exit {
-  padding-top: 10px;
+  padding-top: 15px;
   font-size: 20px;
   font-weight: 700;
   display: flex;
@@ -74,4 +74,18 @@
   opacity: 0;
   pointer-events: none;
   background-color: aliceblue;
+}
+.navbar_r {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar_l {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.user_name {
+  font-weight: 700;
+  font-size: 15px;
 }

@@ -67,6 +67,19 @@
       "background": "https://i.pinimg.com/736x/30/aa/5b/30aa5b5f25a1fdec921a4b2e20238fcf.jpg",
       "posts": [],
       "id": 3
+    },
+    {
+      "name": "beka",
+      "phone": "+996 705 190 750",
+      "email": "beka@gmail.com",
+      "password": "12345678",
+      "password_confirm": "12345678",
+      "city": "",
+      "status": "",
+      "avatar": "",
+      "background": "",
+      "posts": [],
+      "id": 4
     }
   ]
 }
